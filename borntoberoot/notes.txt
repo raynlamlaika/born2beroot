@@ -1,0 +1,183 @@
+Hypervisor: A hypervisor is also known as the virtual machine monitor (VMM) 
+		and controls the resources of the host machine and allocates to each VM 
+		the resources it needs (memory, CPU...)
+
+
+firewall: a firewall acts like a security guard. Its job is to watch over the flow of 
+			information between your computer or network and the internet.
+			"helps keep your digital world safe"
+			Firewall match the network traffic against the rule set defined in its table 
+			'also firewall can be in hardware of software'
+
+	types od FIREWALL:
+		proxy firewall || packet filtering firewall || next-generation firewalls || staful multilayer inspection firewall
+
+
+VirtualBox: It's an open-source software that you will find on your Mac
+		It acts as a hypervisor, creating a VM (virtual machine)
+		where the user can run another OS
+
+
+Debian :was one of the first Linux distributions and has been available since 1993 
+		offers a higher degree of control and customization of its configuration
+
+
+why debain and not rocky:
+			- AppArmor is easier to learn than SELinux (which comes with Rocky "witch are devloped by us nsa")
+			- Password policy configuration is more straightforward
+			- UFW (firewall) is simpler to configure than firewalld
+			- LVM setup process is well
+			- System monitoring is easier to implement
+
+
+systeme adminestration: An operating system acts as an interface between
+			the software and different parts of the computer or the computer hardware
+			'can manage the overall resources and operations of the computer'
+			Examples: of Operating Systems are Windows, Linux, Mac OS, etc...
+
+
+OS (Operating System): software which performs all the basic tasks like 
+			file management, memory management, process management, 
+			handling input and output, and controlling peripheral devices such as 
+			disk drives and printers.
+			The software that contains the core components of the operating system is called the KERNEL.
+
+			Operating System are to enable applications (spftwares) to interact with a computer's
+			hardware and to manage a system's hardware and software resources.
+
+
+THE PATH working on:
+
+Physical Hardware (Real things):
+	↓↓
+RAM (memory)
+CPU (processor)
+Hard drive
+Graphics card
+
+	↓↓↓↓↓↓↓↓↓↓
+VirtualBox (Middle layer):
+		↓↓
+Creates a "fake" computer inside your real computer
+Manages how the physical resources are shared
+
+
+	↓↓↓↓↓↓↓↓↓↓
+Distribution (Software package):
+		↓↓
+Operating system
+Basic programs
+User interface
+System tools
+
+
+SSH 'secureshell': is a network protocol that helps users connect to another computer over an unsecured network.
+					network protocol uses encryption to allow two connected devices 'srever and client'.
+			TELNET is a type of protocol that enables one computer to connect to the local computer. /FTP
+				usecase of SSH:
+					Secure Communication		: 
+					Authentication				: 
+					Data Transfer via Encryption:
+					Remote Access				:
+					File Transfer				:
+					Tunneling					:
+
+
+The term "boot" in computing refers to the process of starting up a computer and loading the operating system (OS)
+				into memory so that the system becomes usable. The word "boot" comes from the phrase "bootstrapping,
+			" which originally referred to a self-starting process, much like pulling oneself up by one’s bootstraps.
+
+
+LVM :
+			Physical Volume (PV):
+			Logical Volume (LV) :
+			
+
+
+waht every paretion represent in the bonus table:
+	Partition Primary: typically the first partition type created on a new disk.
+						A hard drive can have up to four primary partitions.
+	Logical Partitions:	Definition: Logical partitions are created within an extended partition,
+						which acts as a container for additional partitions.
+
+
+
+			each name represents a specific partition or logical volume
+			"hat serves a distinct function within the Linux file system"
+
+sda: The main disk, which could be your entire virtual hard drive in VirtualBox.
+
+sda1: The boot partition, typically small (e.g., 500 MB) and mounted at /boot,
+		containing the kernel and bootloader files.
+
+sda2: This is often a small partition used for alignment; in this setup, it's only 1 KB.
+
+sda5_crypt: This is an encrypted partition that houses all the logical volumes.
+		Inside this encrypted partition, LVM is used to manage logical volumes.
+
+
+
+root: 	is in SUPERUSER account. It has full administrative privileges and 
+		unrestricted access to all files, commands,and system settings.
+1.Administrative Power:
+	The root user can do anything on the system, such as:
+	Installing or removing software.
+	Modifying system configuration files.
+	Managing other users and groups.
+	Accessing or modifying any file, regardless of permissions.
+
+2.Default User for Administration:
+	When the system is installed, the root account is created by default.
+	It is often used for system maintenance and troubleshooting.
+
+3.Home Directory:
+	The root user's home directory is typically located at /root.
+
+4.Command Prompt:
+	The root user's shell prompt usually ends with a # (e.g., root@hostname:/root#),
+	 while regular users have a $.
+
+
+Primary Partition
+Definition: A primary partition is one of the main partitions on a disk that can 
+			directly host a file systemLogical Partition
+Definition: A logical partition is a subdivision of an extended partition and is
+			used to bypass the 4-primary-partition limit of MBR.
+
+
+
+
+
+What is APT?
+APT (Advanced Package Tool) is a package management system used in Debian-based
+Linux distributions (like Ubuntu) to handle software installation, updates, and removal. It simplifies the process of managing software on your system by automating the retrieval, installation, and configuration of packages.
+
+apt update|	           Updates the local package index with the latest information from configured repositories.
+apt upgrade|	       Installs updates for all the packages currently installed on your system.
+apt install <package>| Installs a specific package.
+apt remove <package>|  Removes a specific package while keeping configuration files.
+apt purge <package>|   Completely removes a package along with its configuration files.
+apt search <keyword>|  Searches for a package related to the given keyword.
+apt show <package>|	   Displays detailed information about a package.
+apt autoremove|	       Removes unnecessary packages that were automatically installed and are no longer needed.
+apt clean|			   Clears the local cache of downloaded package files.
+
+APTITUDE VS APT
+
+aptitude: remembers which packages were explicitly requested and which were 
+			only installed due to dependencies. It will automatically uninstall packages which were 
+			not explicitly requested when they are no longer needed.
+apt: will only do explicitly what it is told to do in the command line
+
+
+
+ask:
+encrypted partitions :Definition: A disk partition where all data is stored in an encrypted format,
+						 requiring a password, key file, or hardware token for decryption.
+Purpose: Protect sensitive data from unauthorized access,
+		 especially if the physical device is stolen or compromised
+
+
+
+
+	

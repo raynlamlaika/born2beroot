@@ -1,0 +1,167 @@
+Virtual Machine Basics (e.g., VirtualBox, UTM, or VMware)
+Debian Installation and Configuration
+Partitioning (Primary, Logical, and Swap)
+User and Group Management
+Sudo and Root Privileges
+UFW Firewall Setup
+SSH Configuration
+Password Policy and Security
+Cron Jobs
+System Monitoring (e.g., hostnamectl, uname, etc.)
+Service Management (systemctl)
+SELinux or AppArmor Basics
+Hostname and Network Configuration
+File Permissions and Ownership (chmod, chown)
+File System Basics (ext4, mount, fstab)
+Package Management (apt)
+Basic Shell Commands and Scripting
+System Logs and Log Management
+
+
+30.8G (gigabytes) = 29.80 GiB (gibibytes)
+500M (megabytes) = 0.49 GiB (gibibytes)
+1K (kilobytes) = 0.00 GiB (gibibytes)
+30.36G = 29.34 GiB
+10G = 9.54 GiB
+2.3G = 2.25 GiB
+5G = 4.77 GiB
+3G = 2.93 GiB
+4G = 3.91 GiB
+1024M = 1 GiB
+fdisk -l
+
+
+primary is for boot
+logical just for data and other things
+
+
+
+
+path to change the :ssh port /etc/ssh/sshd_config
+
+some comment that i do need for the project
+Partitioning and Disk Management
+1. lsblk: Lists information about all block devices (e.g., disks and partitions) on your system.
+   Example: lsblk  
+   Use: To see the current partition structure.
+
+2. fdisk: A partition management tool for creating, deleting, and modifying disk partitions.
+   Example: sudo fdisk /dev/sda  
+   Use: To create primary, logical, and swap partitions.
+
+3. parted: Another partitioning tool, more advanced than fdisk.
+   Example: sudo parted /dev/sda  
+   Use: To resize or create partitions.
+
+4. mkfs: Formats a partition with a specific file system.
+   Example: mkfs.ext4 /dev/sda1  
+   Use: To format partitions with file systems like ext4.
+
+5. mkswap: Sets up a partition as swap space.
+   Example: mkswap /dev/sda2  
+   Use: To prepare a swap partition.
+
+6. swapon and swapoff: Activates or deactivates swap space.
+   Example: swapon /dev/sda2  
+   Use: To enable swap during setup or testing.
+
+System Configuration
+1. hostnamectl: Configures or views the system’s hostname.
+   Example: hostnamectl set-hostname myserver  
+   Use: To set the hostname of the server.
+
+2. timedatectl: Configures system time and date settings.
+   Example: timedatectl set-timezone Europe/Paris  
+   Use: To configure the system’s timezone.
+
+3. ufw: Manages the uncomplicated firewall (if used).
+   Example: ufw enable  
+   Use: To enable and manage firewall rules.
+
+4. apt or dnf: Package managers for installing and updating software.
+   Example: sudo apt update && sudo apt upgrade  
+   Use: To manage software updates and installations.
+
+5. nano or vim: Text editors for editing configuration files.
+   Example: nano /etc/fstab  
+   Use: To modify files such as /etc/fstab or /etc/hosts.
+
+User and Permission Management
+1. adduser: Adds a new user to the system.
+   Example: sudo adduser john  
+   Use: To create new users.
+
+2. passwd: Changes a user’s password.
+   Example: passwd john  
+   Use: To set or update passwords.
+
+3. chmod: Changes file permissions.
+   Example: chmod 755 myfile  
+   Use: To control who can read, write, or execute files.
+
+4. chown: Changes file ownership.
+   Example: chown john:john myfile  
+   Use: To assign files to specific users and groups.
+
+5. groups: Shows groups a user belongs to.
+   Example: groups john  
+   Use: To verify or assign group memberships.
+
+Networking
+1. ip: Configures or inspects networking interfaces.
+   Example: ip addr show  
+   Use: To view IP addresses and configure network interfaces.
+
+2. ping: Tests connectivity to another network device.
+   Example: ping google.com  
+   Use: To check internet or local network connections.
+
+3. netstat or ss: Displays network statistics or active connections.
+   Example: ss -tuln  
+   Use: To view ports in use or troubleshoot networking.
+
+4. scp: Securely copies files between systems.
+   Example: scp file.txt user@host:/path/to/destination  
+   Use: To transfer configuration files.
+
+System Monitoring
+1. top: Displays running processes and system performance.
+   Use: To monitor CPU and memory usage.
+
+2. htop: A more user-friendly alternative to top.
+   Example: htop  
+   Use: To monitor and manage system resources interactively.
+
+3. df: Shows disk space usage.
+   Example: df -h  
+   Use: To ensure partitions are correctly mounted and sized.
+
+4. du: Displays disk usage for files and directories.
+   Example: du -sh /var/log  
+   Use: To locate large files or directories.
+
+5. journalctl: Displays system logs.
+   Example: journalctl -b  
+   Use: To debug system issues.
+
+Boot Management
+1. grub-install: Installs the GRUB bootloader.
+   Example: sudo grub-install /dev/sda  
+   Use: To set up the bootloader on your system.
+
+2. update-grub: Updates the GRUB configuration.
+   Example: sudo update-grub  
+   Use: To refresh bootloader configurations after changes.
+
+3. systemctl: Controls system services and the boot process.
+   Example: systemctl enable ssh  
+   Use: To enable or disable services like SSH at boot.
+
+File Management
+1. mount and umount: Mounts and unmounts file systems.
+   Example: mount /dev/sda1 /mnt  
+   Use: To test partitions or manage external drives.
+
+2. rsync: Synchronizes files and directories.
+   Example: rsync -avh /source /destination  
+   Use: To back up important configuration files.

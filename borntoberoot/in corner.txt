@@ -1,0 +1,23 @@
+1.HOST NAME
+is the machine's name on the network
+It helps identify and locate devices on a network,
+making it easier for you to communicate with them.
+For example, if you have multiple computers connected to a local network,
+you can use their hostnames to access them remotely or share files between them.
+
+While a hostname is a human-readable name,
+an IP address is a numerical identifier assigned to a device on a network
+
+where boot should be located and why:
+EXT4 : cus is most modern one and relaible 
+
+
+2.GUIDE PARTITIONING
+ISCSI :It is a protocol that allows computers to connect to storage devices 
+
+
+
+
+
+debain are mor for cominoty 
+and rocky based on ciacle rocky centOS

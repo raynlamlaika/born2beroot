@@ -1,0 +1,11 @@
+for passsword expires in this vi /etc/login.defs file 
+
+script info
+unamr
+/proc/cpuinfo
+free
+defs
+top
+who
+lsblk
+netstat
